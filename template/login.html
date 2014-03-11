@@ -1,0 +1,15 @@
+
+<a href='{%url 'socialauth_begin' 'facebook' %}'> Login with facebook userid</a>
+
+<form action='/log/in/' method="post">
+{% csrf_token %}
+<div>
+name: <input type="text" name='username'>
+</div>
+<div>
+password: <input type="password" name='password'>
+</div>
+<div>
+<input type="submit" value='login'>
+</div>
+</form>

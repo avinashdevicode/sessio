@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+HI
+{% if user.is_authenticated %}
+
+{{user.username}}
+<p><a href='/product/create/'>create product</a></p>
+
+<a href='/logout/' >Logout</a>
+
+{% for product in products %}
+{{product.id}}
+<div>
+<h1>{{product.product_name}}</h1><a href="/product/update/{{product.id}}">Update</a>
+<a href="/product/delete/{{product.id}}">Delete</a>
+</div>
+<strong>productDescription:</strong>
+<p>
+{{product.product_description}}
+</p>
+<p>
+<img alt="" src= "/static/{{product.product_photo}}" width="300">
+</p>
+<hr>
+{% endfor %}
+
+
+{% else %}
+
+
+{% endif %}
+
